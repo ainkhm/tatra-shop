@@ -28,20 +28,20 @@ const Footer: FC<Props> = ({ className, pages }) => {
 
   return (
     <footer className={rootClassName}>
-      <Container>
-        <div className="grid grid-cols-3 pt-[1.5rem] bg-[#161616]">
-          <div>
+      <Container className="min-w-full ">
+        <div className="flex lg:flex-row flex-col  gap-4 lg:gap-0 pt-[1.5rem] bg-[#161616]">
+          <div className="w-[100%] lg:w-[33%]   ">
             <Link href="/">
-              <a className="flex flex-initial items-center font-bold md:mr-24 items-end">
+              <a className="flex flex-initial w-[100%] items-center justify-start font-bold md:mr-24 ">
                 <Logo className="max-w-[4.5rem]" />
-                <span className="text-white font-normal pl-[2rem]">
+                <span className="w-[100%]  text-white font-normal pl-[2rem]">
                   Save the planet - give <br /> clothes a second life
                 </span>
               </a>
             </Link>
           </div>
-          <div className="flex justify-center">
-            <ul>
+          <div className="w-[100%] lg:w-[33%] flex  lg:justify-center">
+            <ul className="flex flex-col gap-2 lg:gap-0">
               <li className="pb-1">
                 <Link href="/">
                   <a className="text-white font-normal text-lg">Catalog</a>
@@ -64,8 +64,8 @@ const Footer: FC<Props> = ({ className, pages }) => {
               </li>
             </ul>
           </div>
-          <div className="flex justify-center">
-            <ul>
+          <div className="w-[100%] lg:w-[33%] flex lg:justify-center">
+            <ul className="flex flex-col gap-2 lg:gap-0">
               <li className="pb-1">
                 <Link href="/">
                   <a className="text-white font-normal text-lg">

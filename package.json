@@ -26,6 +26,7 @@
   },
   "packageManager": "yarn@1.22.17",
   "dependencies": {
+    "formik": "^2.2.9",
     "keen-slider": "^6.6.12",
     "react-image-gallery": "^1.2.8",
     "react-range": "^1.8.12",

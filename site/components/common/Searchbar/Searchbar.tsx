@@ -33,10 +33,10 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
   }
 
   return (
-    <div className={cn(s.root, className)}>
-      <label className="hidden" htmlFor={id}>
+    <div className="flex bg-[#FFFFFF] border-2 border-[#C9C9C9] justify-center items-center">
+      {/* <label className="hidden" htmlFor={id}>
         Search
-      </label>
+      </label> */}
       <input
         id={id}
         className={s.input}
@@ -44,7 +44,7 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
         defaultValue={router.query.q}
         onKeyUp={handleKeyUp}
       />
-      <div className={s.iconContainer}>
+      <div className="bg-[#FFFFFF] xl:flex hidden">
         <img src="./search-icon.svg" alt="search icon" className={s.icon} />
       </div>
     </div>
