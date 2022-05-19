@@ -16,13 +16,13 @@ const RegistrationForm = () => {
             <Field
               type="text"
               name="firstname"
-              className="form-control w-[100%] h-[40px]  text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] h-[40px] bg-[#fffff]  text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="First name*"
             />
             <Field
               type="text"
               name="lastname"
-              className="form-control w-[100%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] h-[40px] text-[12px] bg-[#fffff] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="Last name*"
             />
           </div>
@@ -30,13 +30,13 @@ const RegistrationForm = () => {
             <Field
               type="text"
               name="street"
-              className="form-control w-[100%] lg:w-[50%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] lg:w-[50%] bg-[#fffff] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="STREET*"
             />
             <Field
               type="text"
               name="house"
-              className="form-control w-[100%] lg:w-[50%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] lg:w-[50%] bg-[#fffff] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="HOUSE NUMBER*"
             />
           </div>
@@ -44,7 +44,7 @@ const RegistrationForm = () => {
             <Field
               type="text"
               name="address"
-              className="form-control w-[100%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] h-[40px] bg-[#fffff] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="ADDRESS 2/DHL POST NUMBER"
             />
           </div>
@@ -52,13 +52,13 @@ const RegistrationForm = () => {
             <Field
               type="text"
               name="postcode"
-              className="form-control w-[100%] lg:w-[50%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] lg:w-[50%] h-[40px] bg-[#fffff] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="POST CODE* "
             />
             <Field
               type="text"
               name="city"
-              className="form-control w-[100%] lg:w-[50%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] lg:w-[50%] bg-[#fffff] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="CITY*"
             />
           </div>
@@ -66,7 +66,7 @@ const RegistrationForm = () => {
             <Field
               as="select"
               name="color"
-              className="form-control w-[100%] text-[#aeaaaa] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4"
+              className="form-control w-[100%] bg-[#fffff] text-[#aeaaaa] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4"
             >
               <option value="red" className="">
                 Red
@@ -93,19 +93,19 @@ const RegistrationForm = () => {
             <Field
               type="text"
               name="email"
-              className="form-control w-[100%]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] bg-[#fffff]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="EMAIL"
             />
             <Field
               type="text"
               name="confirmemail"
-              className="form-control w-[100%]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%]   bg-[#fffff] h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="CONFIRM EMAIL"
             />{' '}
             <Field
               type="text"
               name="Phone"
-              className="form-control w-[100%] h-[50px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
+              className="form-control w-[100%] h-[50px] bg-[#fffff] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="Phone number"
             />
           </div>
@@ -134,13 +134,20 @@ const Radio = (props: RadioButtonProps) => {
   return (
     <div className="flex flex-col gap-1">
       <div
-        className="flex w-max gap-3 items-center font-medium"
+        className="flex w-max gap-3 cursor-pointer items-center font-medium"
         onClick={handleRadio1}
       >
         {/* RadioButton */}
-        <div className="w-[14px] h-[14px] rounded-[50%] bg-[#70877B] border-[0.1px] border-black flex  items-center justify-center">
+        <div
+          style={{
+            backgroundColor: active1 ? '#70877B' : '#70877B',
+          }}
+          // borderColor: active1 ? '#6DE039' : '#70877B',
+
+          className="w-[14px] h-[14px] rounded-[50%] bg-[#70877B] border-[0.1px] border-black flex  items-center justify-center"
+        >
           <div
-            style={{ backgroundColor: active1 ? '#0f7ff0' : '#ffffff' }}
+            style={{ backgroundColor: active1 ? '#70877B' : '#ffffff' }}
             className="w-[50%] h-[50%] rounded-[50%] bg-white"
           ></div>
         </div>
@@ -150,11 +157,16 @@ const Radio = (props: RadioButtonProps) => {
       </div>
       {/* // Second */}
 
-      <div className="flex w-max gap-3" onClick={handleRadio2}>
+      <div className="flex cursor-pointer w-max gap-3" onClick={handleRadio2}>
         {/* RadioButton */}
-        <div className="w-[14px] h-[14px] rounded-[50%] bg-[#70877B] border-[0.1px] border-black flex  items-center justify-center">
+        <div
+          style={{
+            backgroundColor: active2 ? '#70877B' : '#70877B',
+          }}
+          className="w-[14px] h-[14px] rounded-[50%] bg-[#70877B] border-[0.1px] border-black flex  items-center justify-center"
+        >
           <div
-            style={{ backgroundColor: active2 ? '#0f7ff0' : '#ffffff' }}
+            style={{ backgroundColor: active2 ? '#70877B' : '#ffffff' }}
             className="w-[50%] h-[50%] rounded-[50%] bg-white"
           ></div>
         </div>

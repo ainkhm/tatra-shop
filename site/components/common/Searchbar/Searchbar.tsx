@@ -33,7 +33,7 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
   }
 
   return (
-    <div className="flex bg-[#FFFFFF] border-2 gap-1 border-[#C9C9C9] justify-center items-center">
+    <div className="flex bg-[#FFFFFF] border-[1.5px] gap-1 border-[#C9C9C9] justify-center items-center">
       {/* <label className="hidden" htmlFor={id}>
         Search
       </label> */}
