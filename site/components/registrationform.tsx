@@ -82,17 +82,19 @@ const RegistrationForm = () => {
             </h1>
             <div className="flex flex-col gap-1">
               <div className="form-group flex items-center gap-3">
-                <Field name="acceptTerms" type="radio" checked={true} />
+                <Field name="acceptTerms" type="radio" />
                 <h1 className="text-[#161616] text-[0.8rem] font-medium">
                   Lorem ipsum
                 </h1>
               </div>
               <div className="form-group flex items-center gap-3">
-                <Field name="acceptTerms" type="radio" checked={true} />
-                <h1 className="text-[#161616] text-[0.8rem] font-medium">
+                <Field name="acceptTerms" type="radio" />
+                  <h1 className="text-[#161616] text-[0.8rem] font-medium">
                   Lorem ipsum
                 </h1>
               </div>
+              {/* CustomRadioButton */}
+              <RadioButton text="Cjhe" />
             </div>
           </div>
           {/* Input fields */}
@@ -124,5 +126,37 @@ const RegistrationForm = () => {
     </Formik>
   )
 }
+
+
+interface RadioButtonProps {
+  text: string
+}
+
+const RadioButton = (props: RadioButtonProps) => {
+  return (
+    <div className="flex gap-3">
+        {/* RadioButton */}
+        <div className="w-[14px] h-[14px] rounded-[50%] bg-[#70877B] border-[0.1px] border-black flex  items-center justify-center">
+          <div className="w-[50%] h-[50%] rounded-[50%] bg-white">
+          </div>
+        </div>
+        <h1 className="text-[#161616] text-[0.8rem] font-medium">
+        {props.text}
+
+        </h1>
+
+
+    </div>
+    
+    // <div
+    //   style={{ fontWeight: props.active ? '600' : '400' }}
+    //   className="flex w-[98%] text-[1rem] font-medium  justify-between"
+    // >
+    //   <p className=" text-[#161616] ">{props.text}</p>
+    //   <p className=" text-[#70877B] ">{props.price}</p>
+    // </div>
+  )
+}
+
 
 export default RegistrationForm
