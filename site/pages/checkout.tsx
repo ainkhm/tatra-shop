@@ -4,7 +4,7 @@ import RegistrationForm from '@components/registrationform'
 import { Layout } from '@components/common'
 
 export default function Checkout() {
-  const [showProduct,setShowProduct]=React.useState(true)
+  const [showProduct, setShowProduct] = React.useState(true)
   return (
     <Container className="min-w-full xl:gap-16 font-sans gap-4 flex flex-col-reverse lg:flex-row flex-start pt-4 overflow-hidden bg-[#FFFFFF]">
       {/* <div className="flex flex-row gap-2"> */}
@@ -28,46 +28,55 @@ export default function Checkout() {
             <h1 className="flex w-[500px] h-[40px] text-[#161616] text-[1rem] pl-4 items-center font-semibold ">
               Order details (2)
             </h1>
-            {showProduct?(
-
-            <img className="cursor-pointer" src="assets/upperarrow.svg" onClick={()=>{setShowProduct(!showProduct)}}></img>
-            ):
-            (<>
-            <img className="cursor-pointer" src="assets/downarrow.svg" onClick={()=>{setShowProduct(!showProduct)}}></img>
-
-            </>)
-            }
+            {showProduct ? (
+              <img
+                className="cursor-pointer"
+                src="assets/upperarrow.svg"
+                onClick={() => {
+                  setShowProduct(!showProduct)
+                }}
+              ></img>
+            ) : (
+              <>
+                <img
+                  className="cursor-pointer"
+                  src="assets/downarrow.svg"
+                  onClick={() => {
+                    setShowProduct(!showProduct)
+                  }}
+                ></img>
+              </>
+            )}
           </div>
           <div className="w-[100%] h-[2px] bg-[#C9C9C9]"></div>
         </div>
-        {showProduct?(
+        {showProduct ? (
           <>
-                  <div className="flex flex-col gap-4 lg:h-[300px] h-[260px] overflow-y-auto  ">
-                  <ProductItem
-                    image="/assets/image 40.png"
-                    heading="FJALLRAVEN | SKOGSO JACKET MEN'S JACKET"
-                    size="S"
-                    price="105 €"
-                  />
-                  <ProductItem
-                    image="/assets/image 40.png"
-                    heading="FJALLRAVEN | SKOGSO JACKET MEN'S JACKET"
-                    size="M"
-                    price="90 €"
-                  />
-                                    <ProductItem
-                    image="/assets/image 40.png"
-                    heading="FJALLRAVEN | SKOGSO JACKET MEN'S JACKET"
-                    size="M"
-                    price="90 €"
-                  />
-
-                </div>        
-                        <div className="w-[100%] h-[2px] bg-[#C9C9C9]"></div>
-
-                        </>
-
-        ):(<></>)}
+            <div className="flex flex-col gap-4 lg:h-[300px] h-[260px] overflow-y-auto  ">
+              <ProductItem
+                image="/assets/image 40.png"
+                heading="FJALLRAVEN | SKOGSO JACKET MEN'S JACKET"
+                size="S"
+                price="105 €"
+              />
+              <ProductItem
+                image="/assets/image 40.png"
+                heading="FJALLRAVEN | SKOGSO JACKET MEN'S JACKET"
+                size="M"
+                price="90 €"
+              />
+              <ProductItem
+                image="/assets/image 40.png"
+                heading="FJALLRAVEN | SKOGSO JACKET MEN'S JACKET"
+                size="M"
+                price="90 €"
+              />
+            </div>
+            <div className="w-[100%] h-[2px] bg-[#C9C9C9]"></div>
+          </>
+        ) : (
+          <></>
+        )}
         {/* Total */}
         <PriceCalc text="SubTotal:" price="195 €" active={false} />
         <PriceCalc text="Shipping costs:" price="5 €" active={false} />
@@ -75,9 +84,9 @@ export default function Checkout() {
         {/* InputApplyButton */}
         <div className="flex flex-col gap-2">
           <input
-            type="email"
-            name="email"
-            className="form-control w-[97%]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
+            type="text"
+            name="promo"
+            className="form-control w-[97%] text-[#C9C9C9]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
             placeholder="Enter your promo code"
           />
           <div className="w-[97%]">
@@ -88,8 +97,6 @@ export default function Checkout() {
     </Container>
   )
 }
-
-
 
 interface ButtonProps {
   text: string

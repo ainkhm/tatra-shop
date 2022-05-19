@@ -11,53 +11,53 @@ const RegistrationForm = () => {
       }}
     >
       {() => (
-        <Form className="flex flex-col gap-4">
+        <Form className="flex flex-col text-[#C9C9C9] gap-4">
           <div className="form-group flex flex-col gap-4">
             <Field
-              type="email"
-              name="email"
-              className="form-control w-[100%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
+              type="text"
+              name="firstname"
+              className="form-control w-[100%] h-[40px]  text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="First name*"
             />
             <Field
-              type="email"
-              name="email"
+              type="text"
+              name="lastname"
               className="form-control w-[100%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="Last name*"
             />
           </div>
           <div className="form-group flex flex-col lg:flex-row  gap-3">
             <Field
-              type="email"
-              name="email"
+              type="text"
+              name="street"
               className="form-control w-[100%] lg:w-[50%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="STREET*"
             />
             <Field
-              type="email"
-              name="email"
+              type="text"
+              name="house"
               className="form-control w-[100%] lg:w-[50%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="HOUSE NUMBER*"
             />
           </div>
           <div className="form-group">
             <Field
-              type="email"
-              name="email"
+              type="text"
+              name="address"
               className="form-control w-[100%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="ADDRESS 2/DHL POST NUMBER"
             />
           </div>
           <div className="form-group flex flex-col lg:flex-row  gap-3">
             <Field
-              type="email"
-              name="email"
+              type="text"
+              name="postcode"
               className="form-control w-[100%] lg:w-[50%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="POST CODE* "
             />
             <Field
-              type="email"
-              name="email"
+              type="text"
+              name="city"
               className="form-control w-[100%] lg:w-[50%] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="CITY*"
             />
@@ -68,7 +68,7 @@ const RegistrationForm = () => {
               name="color"
               className="form-control w-[100%] text-[#aeaaaa] h-[40px] text-[12px] border-[1px] border-[#C9C9C9] pl-4"
             >
-              <option value="red" className="text-red">
+              <option value="red" className="">
                 Red
               </option>
               <option value="green">Green</option>
@@ -81,20 +81,8 @@ const RegistrationForm = () => {
               Select a Shipping Method
             </h1>
             <div className="flex flex-col gap-1">
-              <div className="form-group flex items-center gap-3">
-                <Field name="acceptTerms" type="radio" />
-                <h1 className="text-[#161616] text-[0.8rem] font-medium">
-                  Lorem ipsum
-                </h1>
-              </div>
-              <div className="form-group flex items-center gap-3">
-                <Field name="acceptTerms" type="radio" />
-                  <h1 className="text-[#161616] text-[0.8rem] font-medium">
-                  Lorem ipsum
-                </h1>
-              </div>
               {/* CustomRadioButton */}
-              <RadioButton text="Cjhe" />
+              <Radio text="Lorem ipsum" />
             </div>
           </div>
           {/* Input fields */}
@@ -103,21 +91,21 @@ const RegistrationForm = () => {
           </h1>
           <div className="form-group flex flex-col gap-3">
             <Field
-              type="email"
+              type="text"
               name="email"
               className="form-control w-[100%]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="EMAIL"
             />
             <Field
-              type="email"
-              name="email"
+              type="text"
+              name="confirmemail"
               className="form-control w-[100%]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="CONFIRM EMAIL"
             />{' '}
             <Field
-              type="email"
-              name="email"
-              className="form-control w-[100%] h-[50px] border-[1px] border-[#C9C9C9] pl-4  "
+              type="text"
+              name="Phone"
+              className="form-control w-[100%] h-[50px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
               placeholder="Phone number"
             />
           </div>
@@ -127,36 +115,55 @@ const RegistrationForm = () => {
   )
 }
 
-
 interface RadioButtonProps {
   text: string
 }
 
-const RadioButton = (props: RadioButtonProps) => {
+const Radio = (props: RadioButtonProps) => {
+  const [active1, setActive1] = React.useState(false)
+  const [active2, setActive2] = React.useState(false)
+  const handleRadio1 = () => {
+    setActive1(true)
+    setActive2(false)
+  }
+  const handleRadio2 = () => {
+    setActive2(true)
+    setActive1(false)
+  }
+
   return (
-    <div className="flex gap-3">
+    <div className="flex flex-col gap-1">
+      <div
+        className="flex w-max gap-3 items-center font-medium"
+        onClick={handleRadio1}
+      >
         {/* RadioButton */}
         <div className="w-[14px] h-[14px] rounded-[50%] bg-[#70877B] border-[0.1px] border-black flex  items-center justify-center">
-          <div className="w-[50%] h-[50%] rounded-[50%] bg-white">
-          </div>
+          <div
+            style={{ backgroundColor: active1 ? '#0f7ff0' : '#ffffff' }}
+            className="w-[50%] h-[50%] rounded-[50%] bg-white"
+          ></div>
         </div>
         <h1 className="text-[#161616] text-[0.8rem] font-medium">
-        {props.text}
-
+          {props.text}
         </h1>
+      </div>
+      {/* // Second */}
 
-
+      <div className="flex w-max gap-3" onClick={handleRadio2}>
+        {/* RadioButton */}
+        <div className="w-[14px] h-[14px] rounded-[50%] bg-[#70877B] border-[0.1px] border-black flex  items-center justify-center">
+          <div
+            style={{ backgroundColor: active2 ? '#0f7ff0' : '#ffffff' }}
+            className="w-[50%] h-[50%] rounded-[50%] bg-white"
+          ></div>
+        </div>
+        <h1 className="text-[#161616] text-[0.8rem] font-medium">
+          {props.text}
+        </h1>
+      </div>
     </div>
-    
-    // <div
-    //   style={{ fontWeight: props.active ? '600' : '400' }}
-    //   className="flex w-[98%] text-[1rem] font-medium  justify-between"
-    // >
-    //   <p className=" text-[#161616] ">{props.text}</p>
-    //   <p className=" text-[#70877B] ">{props.price}</p>
-    // </div>
   )
 }
-
 
 export default RegistrationForm

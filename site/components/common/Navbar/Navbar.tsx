@@ -18,7 +18,7 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
   <NavbarRoot>
     <Container
       clean
-      className="mx-auto max-w-8xl px-6 bg-[#FFFFFF]  min-w-full"
+      className="mx-auto max-w-8xl px-6  bg-[#FFFFFF]  min-w-full"
     >
       <div className={s.nav}>
         <div className="flex items-center flex-none">
