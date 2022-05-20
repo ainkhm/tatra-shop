@@ -1,70 +1,22 @@
 import React from 'react'
 import { Container } from '@components/ui'
+import FormButton  from '@components/common/checkout/formbutton'
+
+
 import RegistrationForm from '@components/registrationform'
+import { Formik, Field, Form } from 'formik'
+import * as Yup from 'yup';
+
 import { Layout } from '@components/common'
 
 export default function Checkout() {
     const [showProduct, setShowProduct] = React.useState(true)
-    const [showAddress, setShowAddress] = React.useState(true)
-    const [showPay, setShowPay] = React.useState(false)
-    const [showReview, setShowReview] = React.useState(false)
     return (
         <Container className="min-w-full xl:gap-16 font-sans gap-4 flex flex-col-reverse lg:flex-row flex-start pt-4 overflow-hidden bg-[#FFFFFF]">
             {/* <div className="flex flex-row gap-2"> */}
             {/* LeftSide */}
-            <div className="w-[100%] lg:w-[50%] flex flex-col gap-6 ">
-                {/* formik */}
-
-                <Button
-                    text={'1. ADDRESSES'}
-                    onClick={() => setShowAddress(!showAddress)}
-                />
-                {showAddress ? <RegistrationForm /> : <></>}
-
-                <Button text={'2. PAY'} onClick={() => setShowPay(!showPay)} />
-                {showPay ? (
-                    <div className="">
-                        <h1 className="text-[#161616] text-[0.8rem] font-medium">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                            mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-                            voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-                            fugiat iusto fuga praesentium optio, eaque rerum! Provident
-                            similique accusantium nemo autem. Veritatis obcaecati tenetur iure
-                            eius earum ut molestias architecto voluptate aliquam nihil,
-                            eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-                            tenetur error, harum nesciunt ipsum debitis quas aliquid.
-                            Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa
-                            laudantium molestias eos sapiente officiis modi at sunt excepturi
-                            expedita sint? Sed quibusdam recusandae alias error harum maxime
-                            adipisci amet laborum. Perspiciatis
-                        </h1>
-                    </div>
-                ) : (
-                    <></>
-                )}
-                <Button text={'3. REVIEW'} onClick={() => setShowReview(!showReview)} />
-                {showReview ? (
-                    <div className="">
-                        <h1 className="text-[#161616] text-[0.8rem] font-medium">
-                            Review Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Maxime mollitia, molestiae quas vel sint commodi repudiandae
-                            consequuntur voluptatum laborum numquam blanditiis harum quisquam
-                            eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
-                            Provident similique accusantium nemo autem. Veritatis obcaecati
-                            tenetur iure eius earum ut molestias architecto voluptate aliquam
-                            nihil, eveniet aliquid culpa officia aut! Impedit sit sunt
-                            quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas
-                            aliquid.
-                        </h1>
-                    </div>
-                ) : (
-                    <></>
-                )}
-
-                <div className="w-[100%] lg:w-[490px] pb-24">
-                    <FormButton text="CONTINUE TO PAYMENT METHOD" />
-                </div>
-            </div>
+            <RegistrationForm/>
+                
             {/* Right Side */}
             <div className="w-[100%] lg:w-[50%] flex flex-col gap-4 ">
                 <div>
@@ -126,7 +78,7 @@ export default function Checkout() {
                             <input
                                 type="text"
                                 name="promo"
-                                className="form-control w-[97%] bg-[#ffffff] text-[#C9C9C9]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
+                                className="form-control w-[97%] bg-[#ffffff] outline-none text-[#C9C9C9]  h-[40px] text-[12px]  border-[1px] border-[#C9C9C9] pl-4  "
                                 placeholder="Enter your promo code"
                             />
                             <div className="w-[97%]">
@@ -142,21 +94,6 @@ export default function Checkout() {
     )
 }
 
-interface ButtonProps {
-    text: string
-    onClick: React.MouseEventHandler<HTMLDivElement>
-}
-
-const Button = (props: ButtonProps) => {
-    return (
-        <div
-            className="flex cursor-pointer  bg-[#F1F1F1] w-[100%] lg:w-[490px] h-[40px] text-[#161616] text-[1rem] pl-4 items-center font-semibold "
-            onClick={props.onClick}
-        >
-            {props.text}
-        </div>
-    )
-}
 
 interface ProductItemProps {
     image: string
@@ -210,16 +147,5 @@ const PriceCalc = (props: PriceCalcProps) => {
     )
 }
 
-interface FormButtonProps {
-    text: string
-}
-
-const FormButton = (props: FormButtonProps) => {
-    return (
-        <div className="flex cursor-pointer bg-[#70877B] w-[100%] h-[40px] text-[#FFFFFF] text-[0.7rem] sm:text-[1rem] items-center justify-center font-semibold ">
-            {props.text}
-        </div>
-    )
-}
 
 Checkout.Layout = Layout
