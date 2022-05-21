@@ -38,6 +38,12 @@ const UserNav: React.FC<{
 
   return (
     <nav className={cn(s.root, className)}>
+      <img
+        className=" xl:hidden flex cursor-pointer mr-[20px]"
+        src="./search-icon.svg"
+        alt="search icon"
+      />
+
       <ul className={s.list}>
         {process.env.COMMERCE_CUSTOMERAUTH_ENABLED && (
           <li className={s.item}>
@@ -86,7 +92,7 @@ const UserNav: React.FC<{
             <Menu />
           </Button>
         </li>
-        <li>
+        <li className="hidden lg:flex">
           <I18nWidget />
         </li>
       </ul>
